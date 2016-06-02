@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30234B31D00B37C001EC834 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30234B21D00B37C001EC834 /* Crashlytics.framework */; };
 		C38919B61D00B2EE00E00D2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38919B51D00B2EE00E00D2F /* AppDelegate.swift */; };
 		C38919B81D00B2EE00E00D2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38919B71D00B2EE00E00D2F /* ViewController.swift */; };
 		C38919BB1D00B2EE00E00D2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38919B91D00B2EE00E00D2F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C30234B21D00B37C001EC834 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C38919B01D00B2EE00E00D2F /* Crashlytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crashlytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38919B41D00B2EE00E00D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38919B51D00B2EE00E00D2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30234B31D00B37C001EC834 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +93,7 @@
 		C38919B31D00B2EE00E00D2F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C30234B21D00B37C001EC834 /* Crashlytics.framework */,
 				C38919B41D00B2EE00E00D2F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -122,6 +126,7 @@
 				C38919AC1D00B2EE00E00D2F /* Sources */,
 				C38919AD1D00B2EE00E00D2F /* Frameworks */,
 				C38919AE1D00B2EE00E00D2F /* Resources */,
+				C30234B11D00B339001EC834 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -206,6 +211,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C30234B11D00B339001EC834 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 81aa88bbfdf5730e228d6607294525b0527335f6";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C38919AC1D00B2EE00E00D2F /* Sources */ = {
@@ -340,9 +362,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Unilever";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+				);
 				INFOPLIST_FILE = Crashlytics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "428141c8-a746-45d2-9839-fa7f99d6a551";
 			};
 			name = Debug;
 		};
@@ -350,9 +378,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Unilever";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Unilever";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+				);
 				INFOPLIST_FILE = Crashlytics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "428141c8-a746-45d2-9839-fa7f99d6a551";
 			};
 			name = Release;
 		};
@@ -409,6 +444,7 @@
 				C38919D11D00B2EE00E00D2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C38919D21D00B2EE00E00D2F /* Build configuration list for PBXNativeTarget "CrashlyticsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +453,7 @@
 				C38919D41D00B2EE00E00D2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
